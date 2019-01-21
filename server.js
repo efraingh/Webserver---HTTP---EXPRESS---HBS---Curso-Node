@@ -1,11 +1,15 @@
 const express = require('express');
 const app = express();
 
+const hbs = require('hbs');
+
+
 //middelware
 
 app.use(express.static(__dirname + '/public'))
 
 // Express HBS
+hbs.registerPartials( __dirname + '/views/parciales');
 app.set('view engine', 'hbs');
 
 
